@@ -319,10 +319,10 @@ h1,h2,h3,h4{
   background:rgba(255,255,255,0.08);
 }
 
-/* Hero Visual - Image positioned to overlap heading area */
+/* Hero Visual - Image positioned below header, fully horizontal */
 .hero-visual{
   position:relative;
-  margin-top:-60px;
+  margin-top:20px;
   z-index:2;
 }
 .hero-visual-frame{
@@ -330,6 +330,7 @@ h1,h2,h3,h4{
   border:1px solid rgba(255,255,255,0.15);
   padding:12px;
   position:relative;
+  overflow:hidden;
 }
 .hero-visual-frame::before{
   content:'';
@@ -341,8 +342,9 @@ h1,h2,h3,h4{
 }
 .hero-visual-frame img{
   width:100%;
-  aspect-ratio:4/3;
+  aspect-ratio:16/9;
   object-fit:cover;
+  object-position:center top;
   border:1px solid rgba(255,255,255,0.1);
   display:block;
 }
@@ -1029,7 +1031,7 @@ h1,h2,h3,h4{
 
         <div class="hero-visual">
           <div class="hero-visual-frame">
-            <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782285559/5899963404942773487_hpu6vb.jpg" alt="Piping Isometric Drawing">
+            <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782285559/5899963404942773487_hpu6vb.jpg" alt="Beamlak Alemayehu - Piping Design & Stress Engineering Specialist">
             <div class="drawing-label">
               <span>DRAWING: PL-001-A</span>
               <span>PIPING ISOMETRIC</span>
@@ -1415,7 +1417,7 @@ h1,h2,h3,h4{
           </ul>
 
           <div class="contact-location">
-            <span></span>
+            <span>📍</span>
             <span>Addis Ababa, Ethiopia</span>
           </div>
         </div>
