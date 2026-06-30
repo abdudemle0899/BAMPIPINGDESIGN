@@ -194,6 +194,7 @@ h1,h2,h3,h4{
   color:var(--white);
   position:relative;
   overflow:hidden;
+  padding-bottom:80px;
 }
 .hero-banner::before{
   content:'';
@@ -205,45 +206,50 @@ h1,h2,h3,h4{
 }
 .hero-banner .tech-header{
   border-bottom-color:rgba(255,255,255,0.2);
+  margin-bottom:40px;
 }
-.hero-banner .tech-header-title{color:var(--white)}
+.hero-banner .tech-header-title{color:var(--white);font-size:2.4rem}
 .hero-banner .tech-header-tag{color:var(--steel-light)}
 
 .hero-content{
-  display:grid;
-  grid-template-columns:1.3fr 1fr;
-  gap:60px;
-  align-items:center;
   position:relative;
   z-index:2;
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:40px;
+  align-items:start;
 }
-.hero-text h1{
-  font-size:clamp(2.4rem,5vw,4rem);
-  color:var(--white);
-  line-height:1.05;
-  margin-bottom:20px;
+
+.hero-text{
+  position:relative;
+  z-index:3;
 }
 .hero-text .hero-name{
-  display:block;
-  font-family:'Cormorant Garamond',serif;
-  font-size:0.4em;
-  font-weight:400;
-  letter-spacing:3px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.95rem;
+  letter-spacing:4px;
   text-transform:uppercase;
   color:var(--steel-light);
-  margin-bottom:12px;
+  margin-bottom:20px;
+  font-weight:400;
+}
+.hero-text h1{
+  font-size:clamp(2.6rem,5.5vw,4.5rem);
+  color:var(--white);
+  line-height:1.05;
+  margin-bottom:16px;
+  font-weight:600;
 }
 .hero-text .hero-title{
-  display:block;
   font-family:'Space Grotesk',sans-serif;
-  font-size:0.28em;
-  font-weight:500;
-  letter-spacing:1px;
+  font-size:1.05rem;
+  font-weight:400;
   color:var(--steel-light);
-  margin-top:8px;
+  margin-bottom:24px;
+  letter-spacing:0.5px;
 }
 .hero-text .hero-sub{
-  font-size:1.1rem;
+  font-size:1.05rem;
   color:var(--steel-light);
   line-height:1.7;
   margin-bottom:28px;
@@ -285,6 +291,7 @@ h1,h2,h3,h4{
   display:inline-flex;
   align-items:center;
   gap:8px;
+  font-family:'Space Grotesk',sans-serif;
 }
 .btn-primary:hover{
   background:var(--steel-pale);
@@ -305,30 +312,39 @@ h1,h2,h3,h4{
   display:inline-flex;
   align-items:center;
   gap:8px;
+  font-family:'Space Grotesk',sans-serif;
 }
 .btn-secondary:hover{
   border-color:var(--white);
   background:rgba(255,255,255,0.08);
 }
 
+/* Hero Visual - Image positioned to overlap heading area */
 .hero-visual{
-  border:1px solid rgba(255,255,255,0.2);
+  position:relative;
+  margin-top:-60px;
+  z-index:2;
+}
+.hero-visual-frame{
   background:var(--navy-deep);
-  padding:16px;
+  border:1px solid rgba(255,255,255,0.15);
+  padding:12px;
   position:relative;
 }
-.hero-visual::after{
+.hero-visual-frame::before{
   content:'';
   position:absolute;
-  inset:8px;
-  border:1px dashed rgba(255,255,255,0.15);
+  inset:6px;
+  border:1px dashed rgba(255,255,255,0.12);
   pointer-events:none;
+  z-index:1;
 }
-.hero-visual img{
+.hero-visual-frame img{
   width:100%;
   aspect-ratio:4/3;
   object-fit:cover;
-  border:1px solid rgba(255,255,255,0.15);
+  border:1px solid rgba(255,255,255,0.1);
+  display:block;
 }
 .drawing-label{
   font-family:'JetBrains Mono',monospace;
@@ -338,6 +354,7 @@ h1,h2,h3,h4{
   display:flex;
   justify-content:space-between;
   color:var(--steel-light);
+  letter-spacing:1px;
 }
 
 /* ==================== PROFESSIONAL SUMMARY ==================== */
@@ -483,7 +500,7 @@ h1,h2,h3,h4{
 }
 .project-card-footer .view-link:hover{text-decoration:underline}
 
-/* ==================== PIPE STRESS ENGINEERING (NEW - STRONG) ==================== */
+/* ==================== PIPE STRESS ENGINEERING ==================== */
 .stress-section{
   background:var(--navy);
   color:var(--white);
@@ -763,7 +780,7 @@ h1,h2,h3,h4{
   letter-spacing:1px;
 }
 
-/* ==================== CONTACT - LET'S CONNECT ==================== */
+/* ==================== CONTACT ==================== */
 .contact-section{
   background:var(--navy);
   color:var(--white);
@@ -906,6 +923,7 @@ h1,h2,h3,h4{
   .app-container{flex-direction:column}
   .canvas-section{padding:60px 28px}
   .hero-content,.summary-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-visual{margin-top:40px}
   .leadership-block{grid-template-columns:1fr}
   .leadership-left{border-right:none;border-bottom:2px solid var(--navy)}
   .leadership-responsibilities{grid-template-columns:1fr}
@@ -983,17 +1001,15 @@ h1,h2,h3,h4{
     <!-- SECTION 1: HERO BANNER -->
     <section class="canvas-section hero-banner" id="home">
       <div class="tech-header">
-        <h2 class="tech-header-title">Industrial Piping & Stress Engineering</h2>
+        <h2 class="tech-header-title">Piping Design Engineer | Supervisor | Pipe Stress Engineering</h2>
         <span class="tech-header-tag">[ SECTION 01 ]</span>
       </div>
 
       <div class="hero-content">
         <div class="hero-text">
-          <h1>
-            <span class="hero-name">Beamlak Alemayehu Ayele</span>
-            Designing Safe, Efficient, and Buildable Industrial Piping Systems
-            <span class="hero-title">Piping Design Engineer | Supervisor | Pipe Stress Engineering Professional</span>
-          </h1>
+          <div class="hero-name">Beamlak Alemayehu Ayele</div>
+          <h1>Designing Safe, Efficient, and Buildable Industrial Piping Systems</h1>
+          <div class="hero-title">Piping Design Engineer | Supervisor | Pipe Stress Engineering Professional</div>
           <p class="hero-sub">
             Specializing in petrochemical, chemical, fertilizer, and process plant projects. Experienced in delivering 15+ industrial facilities using AVEVA E3D, PDMS, Navisworks, AutoCAD, and CAESAR II.
           </p>
@@ -1012,10 +1028,12 @@ h1,h2,h3,h4{
         </div>
 
         <div class="hero-visual">
-          <img src="https://image.qwenlm.ai/public_source/e4927543-1efc-4c72-abc2-c87d8df6f06c/1728994f6-3dd9-4942-b7db-e14e37b7ceb9.png" alt="Piping Isometric Drawing">
-          <div class="drawing-label">
-            <span>DRAWING: PL-001-A</span>
-            <span>PIPING ISOMETRIC</span>
+          <div class="hero-visual-frame">
+            <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782285559/5899963404942773487_hpu6vb.jpg" alt="Piping Isometric Drawing">
+            <div class="drawing-label">
+              <span>DRAWING: PL-001-A</span>
+              <span>PIPING ISOMETRIC</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1193,7 +1211,7 @@ h1,h2,h3,h4{
       </div>
     </section>
 
-    <!-- SECTION 4: PIPE STRESS ENGINEERING (NEW - STRONG) -->
+    <!-- SECTION 4: PIPE STRESS ENGINEERING -->
     <section class="canvas-section stress-section" id="stress">
       <div class="tech-header">
         <h2 class="tech-header-title">Pipe Stress Engineering</h2>
@@ -1373,7 +1391,7 @@ h1,h2,h3,h4{
       </div>
     </section>
 
-    <!-- SECTION 8: CONTACT - LET'S CONNECT -->
+    <!-- SECTION 8: CONTACT -->
     <section class="canvas-section contact-section" id="contact">
       <div class="tech-header">
         <h2 class="tech-header-title">Let's Connect</h2>
@@ -1397,7 +1415,7 @@ h1,h2,h3,h4{
           </ul>
 
           <div class="contact-location">
-            <span>📍</span>
+            <span></span>
             <span>Addis Ababa, Ethiopia</span>
           </div>
         </div>
